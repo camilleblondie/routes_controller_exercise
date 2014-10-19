@@ -11,7 +11,7 @@ gem 'ffaker'
 
 
 gem 'thin'
-
+gem 'eventmachine', '~> 1.0.3'
 gem 'quiet_assets', :group => :development
 
 
