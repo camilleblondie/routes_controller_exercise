@@ -6,6 +6,9 @@
   <% @products.each do |product| %>
     <li>
     Product Name: "<%= product.name %>", Cost: <%= product.price %>
+    <%= link_to "Show", product_path(product) %>
+    <%= link_to "Edit", edit_product_path(product) %>
+    <%= link_to "Destroy", product, :method => :delete, :data => { :confirm => 'Are you sure?'} %>
     </li>
     <% end %>
 </ul>
