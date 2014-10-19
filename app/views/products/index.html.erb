@@ -1,5 +1,16 @@
 <h2>Hello World</h2>
 <h2> I AMA View </h2>
+<p>Number of products : <%= Product.count %></p>
 <p>
-  Find me in <%= Rails.root.join("app", "views", "products", __FILE__ ) %>
+<% if !Product.all.blank? %>
+<ul>
+  <% for product in Product.all %>
+    <li>
+    Product Name: "<%= product.name %>", Cost: <%= product.price %>, Owner = <%= product.user.name %>
+    </li>
+    <% end %>
+</ul>
+<% else %>
+  There are no products yet.
+<% end %>
 </p>
